@@ -6,5 +6,9 @@ RUN mkdir -p /home/node-app
 
 COPY ./app /home/node-app
 
-CMD ["node", "/home/node-app/server.js"]
+WORKDIR /home/node-app
+
+RUN npm install
+
+CMD ["node", "server.js"]
 
